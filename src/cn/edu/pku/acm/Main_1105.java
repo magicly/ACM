@@ -4,19 +4,14 @@ import java.util.Scanner;
 
 public class Main_1105 {
 	private static boolean debug = false;
+
 	private static void debugSay(String s) {
 		if (debug) {
 			System.out.println(s);
 		}
 	}
-	/**
-	 * @param args
-	 */
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 		int nn = 0;
@@ -24,7 +19,7 @@ public class Main_1105 {
 			nn++;
 			String tmp;
 			int[] orderMap = new int[n + 1];
-			int[] values = new int[(int)Math.pow(2, n)];
+			int[] values = new int[(int) Math.pow(2, n)];
 			for (int i = 0; i < n; i++) {
 				tmp = in.next();
 				orderMap[new Integer(tmp.substring(1))] = i + 1;
@@ -32,12 +27,12 @@ public class Main_1105 {
 			for (int order : orderMap) {
 				debugSay(order + "");
 			}
-			
+
 			tmp = in.next();
 			for (int i = 0; i < tmp.length(); i++) {
 				values[i] = new Integer(tmp.substring(i, i + 1));
 			}
-			for(int value : values) {
+			for (int value : values) {
 				debugSay(value + "");
 			}
 
@@ -58,7 +53,7 @@ public class Main_1105 {
 					k = (2 * k + 1) + vva[j + 1];
 					debugSay("k: " + k);
 				}
-				k -= (int)Math.pow(2, n) - 1;
+				k -= (int) Math.pow(2, n) - 1;
 				debugSay("k: " + k);
 				System.out.print(values[k]);
 			}
